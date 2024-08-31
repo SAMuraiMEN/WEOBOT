@@ -7,10 +7,10 @@ bot = telebot.TeleBot("7273841264:AAHYFTHox-gKmCcQfBtwR_jq47MjGETkhdY")
 
 # Словари для хранения разрешений
 admins = {
-    'warn': ["@WaB3pMa", "@Doshik_1_8_5"],  # Список ID пользователей, которые могут использовать команду /warn
-    'mute': ["@WaB3pMa", "@Doshik_1_8_5"],  # Список ID пользователей, которые могут использовать команду /mute
+    'warn': [@WaB3pMa, @Doshik_1_8_5],  # Список ID пользователей, которые могут использовать команду /warn
+    'mute': [@WaB3pMa, @Doshik_1_8_5],  # Список ID пользователей, которые могут использовать команду /mute
     'ban': [123456789],   # Список ID пользователей, которые могут использовать команду /ban
-    'unmute': ["@WaB3pMa", "@Doshik_1_8_5"] # Список ID пользователей, которые могут использовать команду /unmute
+    'unmute': [@WaB3pMa, @Doshik_1_8_5] # Список ID пользователей, которые могут использовать команду /unmute
 }
 
 # Словарь для хранения предупреждений
@@ -48,12 +48,9 @@ def warn_user(message: Message):
 
         # Определяем время мута
         mute_duration = None
-        if warnings[target_user_id] == 3:
-            mute_duration = 60  # 1 минута
-        elif warnings[target_user_id] == 5:
-            mute_duration = 3600  # 1 час
-        elif warnings[target_user_id] >= 7:
-            mute_duration = 86400  # 1 день
+        if warnings[target_user_id] == 5:
+            mute_duration = 360  # 1 минута
+
 
         # Отправляем сообщение с количеством предупреждений
         warning_count = warnings[target_user_id]
